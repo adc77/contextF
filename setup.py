@@ -9,7 +9,7 @@ with open("README_PYPI.md", "r", encoding="utf-8") as fh:
 
 setup(
     name="contextF",
-    version="0.0.2",
+    version="0.0.3",
     author="axondendrite",
     author_email="amandogra2016@gmail.com",
     description="Efficient context builder",
