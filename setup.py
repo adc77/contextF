@@ -4,12 +4,12 @@ Setup script for contextF library
 
 from setuptools import setup, find_packages
 
-with open("README_PYPI.md", "r", encoding="utf-8") as fh:
+with open("contextF/README_PYPI.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 setup(
     name="contextF",
-    version="0.0.3",
+    version="0.0.4",
     author="axondendrite",
     author_email="amandogra2016@gmail.com",
     description="Efficient context builder",
