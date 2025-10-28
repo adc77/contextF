@@ -1,4 +1,4 @@
-include contextF/README_PYPI.md
+include README_PYPI.md
 include contextF/default_config.json
 recursive-include contextF *.py
 recursive-include contextF *.json
