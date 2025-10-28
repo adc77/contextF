@@ -28,12 +28,14 @@ pip install contextF[pdf]
 
 ```python
 from contextF import ContextBuilder
+from dotenv import load_dotenv
+load_dotenv()
 
 # Initialize with defaults
-cb = ContextBuilder()
+cb = ContextBuilder(openai_api_key=os.getenv("OPENAI_API_KEY"))
 
 # Build context using a query (LLM will generate search patterns)
-result = cb.build_context(query="machine learning algorithms")
+result = cb.build_context(query="how to implement hallucination detection at model level in LLMs?")
 
 print(f"Context: {result['context']}")
 print(f"Tokens: {result['context_tokens']}")
@@ -44,7 +46,7 @@ print(f"Files used: {list(result['files_used'].keys())}")
 
 ```python
 # Bypass LLM and use direct search patterns
-result = cb.build_context(patterns=["neural networks", "deep learning", "CNN"])
+result = cb.build_context(patterns=["hallucination", "detection", "level"])
 ```
 
 ### Custom Configuration
@@ -55,7 +57,8 @@ cb = ContextBuilder(
     docs_path="./my_documents",
     max_context_tokens=100000,
     context_window_tokens=5000,
-    max_patterns_per_query=5
+    max_patterns_per_query=5,
+    openai_api_key=os.getenv("OPENAI_API_KEY")
 )
 ```
 

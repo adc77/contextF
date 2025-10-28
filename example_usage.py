@@ -2,9 +2,12 @@
 Example usage of contextF library
 """
 
+from json import load
 import os
 from contextF import ContextBuilder
 from contextF.utils import PDFParser, TokenCounter
+from dotenv import load_dotenv
+load_dotenv()
 
 def main():
     """Demonstrate contextF library usage"""
@@ -19,7 +22,8 @@ def main():
     cb = ContextBuilder(
         docs_path="data\papersMDs",  # Adjust path as needed
         max_context_tokens=50000,
-        context_window_tokens=5000
+        context_window_tokens=5000,
+        openai_api_key=os.getenv("OPENAI_API_KEY")
     )
     
     query = "how to implement hallucination detection at model level in LLMs?"
