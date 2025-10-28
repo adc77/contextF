@@ -3,15 +3,13 @@ Setup script for contextF library
 """
 
 from setuptools import setup, find_packages
-from pathlib import Path
 
-# Read README file
-readme_path = Path(__file__).parent / "README_PYPI.md"
-long_description = readme_path.read_text(encoding="utf-8") if readme_path.exists() else ""
+with open("README_PYPI.md", "r", encoding="utf-8") as fh:
+    long_description = fh.read()
 
 setup(
     name="contextF",
-    version="0.0.1",
+    version="0.0.2",
     author="axondendrite",
     author_email="amandogra2016@gmail.com",
     description="Efficient context builder",
