@@ -2,6 +2,14 @@
 
 A Python library for building relevant context from documents using configurable search patterns and token-aware context windowing.
 
+**Evaluation: contextF vs context_dump**
+
+Compared [contextF](https://github.com/adc77/contextF) (efficient, pattern-based context building) with "context dump" (simply sending all document content to the LLM). See benchmark results and evaluation scripts at:  
+[contextF-eval](https://github.com/adc77/contextF-eval)
+
+*This demonstrates the gains of targeted, token-aware context building vs naive full-context dumping!*
+
+
 ## Features
 
 - **Flexible Pattern Matching**: Use LLM-generated patterns or provide your own search terms
