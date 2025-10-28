@@ -1,0 +1,26 @@
+{
+  "search": {
+    "docs_path": "./docs",
+    "file_patterns": ["*.md", "*.txt"],
+    "max_patterns_per_query": 3,
+    "max_matches_per_file": 3,
+    "case_sensitive": false
+  },
+  "tokens": {
+    "context_window_tokens": 10000,
+    "max_context_tokens": 500000,
+    "max_file_tokens": 200000,
+    "encoding": "cl100k_base"
+  },
+  "text_processing": {
+    "chunk_size": 1000,
+    "chunk_overlap": 200,
+    "merge_overlapping_windows": true
+  },
+  "llm": {
+    "enabled": true,
+    "model": "gpt-4.1-mini",
+    "temperature": 0.3,
+    "pattern_generation_prompt": "Given this query, generate up to {max_patterns} specific search patterns (keywords) that would be most relevant for finding information in documents.\n\nQuery: {query}\n\nReturn only the single word search patterns, one per line, without numbering or explanation."
+  }
+}

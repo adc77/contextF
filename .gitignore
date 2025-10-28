@@ -1,0 +1,11 @@
+.env
+venv/
+data/
+outputMDs/
+papersMDs/
+inputPDFs/
+papersPDF/
+outputs/
+data/
+prevTests/
+__pycache__/
